@@ -62,6 +62,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\MainWindow.cs" />
+    <Compile Include="ViewModel\Search.cs" />
+    <Compile Include="ViewModel\Weather.cs" />
+    <Compile Include="WeatherApp.Common\ObservableObject.cs" />
+    <Compile Include="WeatherApp.Common\RelayCommand.cs" />
     <Page Include="Components\Search.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
