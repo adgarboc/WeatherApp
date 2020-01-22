@@ -7,6 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Frame />
+        <Expander ExpandDirection="Left" HorizontalAlignment="Right">
+            <Expander.Header>
+                <TextBlock Text="Búsqueda" >
+                    <TextBlock.LayoutTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="90"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.LayoutTransform>
+                </TextBlock>
+            </Expander.Header>
+            <comp:Search />
+        </Expander>
     </Grid>
 </Window>
