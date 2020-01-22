@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WheatherApp.WeatherApp.Common
+namespace WeatherApp.Common
 {
     public abstract class ObservableObject : INotifyPropertyChanged
     {

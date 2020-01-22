@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WheatherApp", "WheatherApp\WheatherApp.csproj", "{2306734D-D9B5-4C95-ADBA-166F5DD8F5F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApp", "WheatherApp\WeatherApp.csproj", "{2306734D-D9B5-4C95-ADBA-166F5DD8F5F5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{0AC3AF8B-D3CA-4F70-B292-870FB131AB55}"
 EndProject

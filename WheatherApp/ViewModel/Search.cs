@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using WeatherApp.Model;
-using WheatherApp.WeatherApp.Common;
+using WheatherApp.Common.Common;
 
 namespace WheatherApp.ViewModel
 {

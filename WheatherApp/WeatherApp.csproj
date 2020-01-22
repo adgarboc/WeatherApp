@@ -11,8 +11,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2306734D-D9B5-4C95-ADBA-166F5DD8F5F5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WheatherApp</RootNamespace>
-    <AssemblyName>WheatherApp</AssemblyName>
+    <RootNamespace>WeatherApp</RootNamespace>
+    <AssemblyName>WeatherApp</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -65,8 +65,8 @@
     <Compile Include="ViewModel\MainWindow.cs" />
     <Compile Include="ViewModel\Search.cs" />
     <Compile Include="ViewModel\Weather.cs" />
-    <Compile Include="WeatherApp.Common\ObservableObject.cs" />
-    <Compile Include="WeatherApp.Common\RelayCommand.cs" />
+    <Compile Include="Common\ObservableObject.cs" />
+    <Compile Include="Common\RelayCommand.cs" />
     <Page Include="Components\Search.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

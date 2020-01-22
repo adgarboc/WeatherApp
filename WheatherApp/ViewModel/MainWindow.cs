@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using WeatherApp.Model;
 
-namespace WheatherApp.ViewModel
+namespace WeatherApp.ViewModel
 {
     public class MainWindow : INotifyPropertyChanged
     {

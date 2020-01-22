@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace WheatherApp.WeatherApp.Common
+namespace WeatherApp.Common
 {
     public class RelayCommand : ICommand
     {
