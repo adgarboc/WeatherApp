@@ -338,3 +338,5 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/WeatherApp.Model/Properties/Resources.Designer.cs
+/WeatherApp.Model/Properties/Resources.resx
