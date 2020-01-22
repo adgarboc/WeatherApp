@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WeatherApp.Model
 {
-    class DataPoint
+    public class DataPoint
     {
         public int time { get; set; }
         public String summary { get; set; }

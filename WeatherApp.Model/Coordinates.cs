@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WeatherApp.Model
 {
-    class Coordinates
+    public class Coordinates
     {
         public double latitude { get; set; }
         public double longitude { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WeatherApp.Model
 {
-    class DataBlock
+    public class DataBlock
     {
         public string summary { get; set; }
         public string icon { get; set; }
