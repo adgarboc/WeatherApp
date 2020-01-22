@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WeatherApp.Model;
 
-namespace WeatherApp.Test
+namespace WeatherApp.Test.Model
 {
     [TestClass]
     public class ClientTest

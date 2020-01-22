@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using WeatherApp.Model;
 
 namespace WheatherApp.ViewModel
 {
-    class MainWindow : INotifyPropertyChanged
+    public class MainWindow : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged(string property)

@@ -12,9 +12,38 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Vertical" Margin="5">
-            <TextBox MinWidth="200"/>
-            <Button Content="Buscar" HorizontalAlignment="Right"/>
+            <TextBox MinWidth="200" Text="{Binding Path=TextSearch}"/>
+            <Button Content="Buscar" HorizontalAlignment="Right" Command="{Binding Path=SearchIt}"/>
         </StackPanel>
-        <ListBox Grid.Row="1" Margin="5"></ListBox>
+        <ListBox Grid.Row="1" Margin="5" ItemsSource="{Binding Path=Locations}" ItemTemplate="{DynamicResource DtLocations}" SelectedValue="{Binding Path=Location}">
+            <ListBox.Resources>
+                <DataTemplate x:Key="DtLocations">
+                    <Grid MaxWidth="250">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="1" Orientation="Horizontal">
+                            <TextBlock Margin="3">
+                                <Run Text="Lat: " FontWeight="Bold"/>
+                                <Run Text="{Binding Path=Coordinates.Latitude, StringFormat=N2}"/>
+                            </TextBlock>
+                            <TextBlock Margin="3">
+                                <Run Text="Lon: " FontWeight="Bold"/>
+                                <Run Text="{Binding Path=Coordinates.Longitude, StringFormat=N2}"/>
+                            </TextBlock>
+                        </StackPanel>
+                        <TextBlock Grid.Row="0" FontWeight="Bold" FontSize="14pt">
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{}{0} ({1})">
+                                    <Binding Path="Name"/>
+                                    <Binding Path="Country"/>
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.Resources>
+        </ListBox>
     </Grid>
 </UserControl>
