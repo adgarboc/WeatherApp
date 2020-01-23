@@ -3,10 +3,14 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:WeatherApp.Components"
+       xmlns:conv="clr-namespace:WeatherApp.Converters"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Weather">
+
+    <Page.Resources>
+        <conv:Degrees x:Key="ConvDegrees"/>
+    </Page.Resources>
 
     <Grid Background="Black">
         <Grid.ColumnDefinitions>
@@ -15,14 +19,22 @@
         </Grid.ColumnDefinitions>
         <Image Grid.Column="0" Stretch="Uniform" VerticalAlignment="Center" Source="{Binding Path=ImageSource}"/>
         <StackPanel Grid.Column="1" VerticalAlignment="Center" Orientation="Vertical" Margin="0,0,30,0">
-            <TextBlock FontSize="36pt" FontWeight="Bold" Text="{Binding Path=CurrentWeather.temperature}" Foreground="White"/>
+            <TextBlock FontSize="36pt" FontWeight="Bold" Foreground="White" TextAlignment="Right">
+                <TextBlock.Text>
+                    <MultiBinding Converter="{StaticResource ConvDegrees}">
+                        <MultiBinding.Bindings>
+                            <Binding Path="CurrentWeather.temperature"/>
+                            <Binding Path="IsFarenheit"/>
+                        </MultiBinding.Bindings>
+                    </MultiBinding>
+                </TextBlock.Text></TextBlock>
             <TextBlock FontSize="18pt" FontWeight="Bold" Text="{Binding Path=CurrentWeather.icon}" Foreground="White"/>
         </StackPanel>
         <Border Grid.ColumnSpan="2" CornerRadius="5" VerticalAlignment="Top"
                 HorizontalAlignment="Right" Margin="0,5,30,0">
             <StackPanel Orientation="Horizontal">
-                <RadioButton GroupName="Degree" Foreground="White">Fº</RadioButton>
-                <RadioButton GroupName="Degree" Foreground="White" IsChecked="{Binding Path=IsFarenheit}">Cº</RadioButton>
+                <RadioButton GroupName="Degree" Foreground="White" IsChecked="{Binding Path=IsFarenheit}">Fº</RadioButton>
+                <RadioButton GroupName="Degree" Foreground="White">Cº</RadioButton>
             </StackPanel>
         </Border>
     </Grid>

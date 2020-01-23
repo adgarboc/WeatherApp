@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using WeatherApp.Model;
 using WeatherApp.Common;
-using WeatherApp.Components;
 using System.Windows.Controls;
+using WheatherApp.ViewModel;
 
 namespace WeatherApp.ViewModel
 {
