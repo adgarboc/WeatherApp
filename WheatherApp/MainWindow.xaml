@@ -4,13 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WeatherApp"
+        xmlns:comp="clr-namespace:WeatherApp.Components"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Frame />
-        <Expander ExpandDirection="Left" HorizontalAlignment="Right">
+        <Frame x:Name="Browser"/>
+        <Expander ExpandDirection="Left" IsExpanded="{Binding Path=IsSearchExpanded}" HorizontalAlignment="Right" Background="Gainsboro">
             <Expander.Header>
-                <TextBlock Text="Búsqueda" >
+                <TextBlock Text="Búsqueda">
                     <TextBlock.LayoutTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -21,7 +22,7 @@
                     </TextBlock.LayoutTransform>
                 </TextBlock>
             </Expander.Header>
-            <comp:Search />
+            <comp:Search DataContext="{Binding Path=Search}"/>
         </Expander>
     </Grid>
 </Window>

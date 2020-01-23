@@ -23,6 +23,9 @@ namespace WeatherApp
         public MainWindow()
         {
             InitializeComponent();
+            var vm = new ViewModel.MainWindow { Browser = Browser };
+            vm.Init();
+            DataContext = vm;
         }
     }
 }

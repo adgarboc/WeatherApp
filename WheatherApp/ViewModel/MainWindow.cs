@@ -5,28 +5,42 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using WeatherApp.Model;
+using WeatherApp.Common;
+using WeatherApp.Components;
+using System.Windows.Controls;
 
 namespace WeatherApp.ViewModel
 {
-    public class MainWindow : INotifyPropertyChanged
+    public class MainWindow : ObservableObject
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged(string property)
+        private bool _isSearchExpanded;
+        public bool IsSearchExpanded
         {
-            if (PropertyChanged != null)
+            get { return _isSearchExpanded; }
+            set
             {
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
+                _isSearchExpanded = value;
+                OnPropertyChanged("IsSearchExpanded");
             }
         }
 
-        private String _sample;
-        public String Sample
+        public Search Search { get; set; }
+
+        public Frame Browser { get; set; }
+
+        public void Init()
         {
-            get { return _sample; }
-            set
+            Search = new Search { Mw = this };
+        }
+
+        public void GetWeather(Location location)
+        {
+            if (location != null)
             {
-                _sample = value;
-                OnPropertyChanged("Sample");
+                var city = Client.GetWeather(location.coordinates);
+                var vm = new Weather { City = city, IsFarenheit = false };
+                Browser.Navigate(new Components.Weather { DataContext = vm });
+                IsSearchExpanded = false;
             }
         }
     }
